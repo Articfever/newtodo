@@ -11,8 +11,8 @@ class App extends Component {
         { description: 'Throw the dishes away', isCompleted: false },
         { description: 'Buy new dishes', isCompleted: false}
       ],
-      newaTodoDescription: ''
-    }
+      newTodoDescription: ''
+    };
   }
 
     handleChange(e) {
@@ -43,7 +43,6 @@ class App extends Component {
       <div className="App">
       <ul>
       { this.state.todos.map( (todo, index) =>
-//        <ToDo key={ index }description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } />
           <ToDo key={ index }
           description={ todo.description }
           isCompleted={ todo.isCompleted }
@@ -53,7 +52,6 @@ class App extends Component {
       )}
       </ul>
       <form onSubmit={ (e) => this.handleSubmit(e) }>
-        <input type="text" value={ this.state.newTodoDescription } />
         <input type="text" value={ this.state.newTodoDescription } onChange={ (e) => this.handleChange(e) } />
         <input type="submit" />
       </form>
